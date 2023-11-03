@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class AST {
+
+	public ArrayList<AstNodes> roots;
+	public static Map<String,Double> env = new HashMap<String,Double>();
+	
+	public AST() {
+		this.roots = new ArrayList<AstNodes>();
+	}
+	
+	public static boolean isDeclared(String id) {
+		return env.containsKey(id);
+	}
+	public static double getVARval(String id) {
+		return env.get(id);
+	}
+	
+	public void addNode(AstNodes node) {
+		if(node != null) {
+			this.roots.add(node);
+		}
+	}
+
+	
+}

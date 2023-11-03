@@ -1,0 +1,15 @@
+
+public class AstNodes {
+	//define AST nodes to print
+	//The nodes have to defined as class
+	public enum TYPE { MUL, DIV, ADD, SUB, PAR, DEC, NUM, VAR }; 
+	
+	public AstNodes.TYPE type;
+	private String id;
+	private Double val;
+	private AstNodes Left;
+	private AstNodes Right;
+	
+	
+	
+}

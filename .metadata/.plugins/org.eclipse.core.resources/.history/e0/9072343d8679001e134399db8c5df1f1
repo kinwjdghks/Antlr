@@ -1,0 +1,53 @@
+
+public class AstNodes {
+	//define AST nodes to print
+	//The nodes have to defined as class
+//	public enum TYPE { MUL, DIV, ADD, SUB, PAR, DEC, NUM, VAR }; 
+	
+	public static class Multiplication{
+//		static AstNodes.TYPE type = TYPE.MUL;
+		private AstNodes RHS;
+		private AstNodes LHS;
+	}
+	
+	public class Division extends AstNodes{
+//		static AstNodes.TYPE type = TYPE.DIV;
+		private AstNodes RHS;
+		private AstNodes LHS;
+	}
+	
+	public class Addition extends AstNodes{
+//		static AstNodes.TYPE type = TYPE.ADD;
+		private AstNodes RHS;
+		private AstNodes LHS;
+	}
+	
+	public class Subtraction extends AstNodes{
+//		static AstNodes.TYPE type = TYPE.SUB;
+		private AstNodes RHS;
+		private AstNodes LHS;
+	}
+	
+	public class Parenthesis extends AstNodes{
+//		static AstNodes.TYPE type = TYPE.PAR;
+		private AstNodes expr;
+	}
+	
+	public class VariableDeclaration extends AstNodes{
+//		static AstNodes.TYPE type = TYPE.DEC;
+		private VAR id;
+		private NUM val;
+	}
+	
+	public class NUM {
+//		static AstNodes.TYPE type = TYPE.NUM;
+		private double val;
+	}
+	
+	public class VAR{
+//		static AstNodes.TYPE type = TYPE.VAR;
+		private String id;
+		
+	}
+	
+}

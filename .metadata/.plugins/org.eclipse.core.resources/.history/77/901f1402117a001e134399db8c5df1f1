@@ -1,0 +1,25 @@
+
+public class BuildAstVisitor extends ExprBaseVisitor<T>{
+	//Build AST using ExprBaseVisitor.java
+
+	public T visitProg(ExprParser.ProgContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+	public T visitVarExpr(ExprParser.VarExprContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+	public T visitInfixExpr(ExprParser.InfixExprContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+	public T visitNumberExpr(ExprParser.NumberExprContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+	public T visitParensExpr(ExprParser.ParensExprContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+}

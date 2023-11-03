@@ -1,0 +1,24 @@
+
+public class Evaluate {
+	//Define methods to calculate the expression we get as input
+	//The name of the method should be "evaluate"
+	public double evaluate(AstNodes node) {
+		
+		switch(node.type) {
+		
+		
+		case AstNodes.TYPE.MUL:
+			return evaluate(node.getLeft())*evaluate(node.getRight());
+			break;
+		case AstNodes.TYPE.DIV:
+			return evaluate(node.getLeft())/evaluate(node.getRight());
+			break;
+		case AstNodes.TYPE.ADD:
+			return evaluate(node.getLeft())+evaluate(node.getRight());
+			break;
+		case AstNodes.TYPE.SUB:
+			return evaluate(node.getLeft())-evaluate(node.getRight());
+			break;
+	
+	}
+}

@@ -1,0 +1,66 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class AstNodes {
+	//define AST nodes to print
+	//The nodes have to defined as class
+	public enum TYPE { MUL, DIV, ADD, SUB, PAR, DEC, NUM, VAR }; 
+	
+	public AstNodes(AstNodes.TYPE type, int val) { //NUM
+		this.val = (double)val;
+	}
+	public AstNodes(AstNodes.TYPE type, double val) { //NUM
+		this.val = val;
+	}
+	public AstNodes(AstNodes.TYPE type, String id, int val) { //VAR
+		this.id = id;
+		this.val = (double)val;
+	}
+	public AstNodes(AstNodes.TYPE type, String id, double val) { //VAR
+		this.id = id;
+		this.val = val;
+	}
+	public AstNodes(AstNodes.TYPE type, AstNodes left, AstNodes right) { //INFIX, DEC
+		this.Left = left;
+		this.Right = right;
+	}
+	public AstNodes(AstNodes.TYPE type, AstNodes inner) { //PAR
+		this.Inner = inner;
+	}
+	
+	
+	private AstNodes.TYPE type;
+	private String id;
+	private Double val;
+	private AstNodes Left;
+	private AstNodes Right;
+	private AstNodes Inner;
+//	private Double result;
+	
+	
+	
+	public AstNodes getLeft() { return Left; }
+	public AstNodes getRight() { return Right; }
+	public AstNodes getInner() { return Inner; }
+	public AstNodes.TYPE getType() { return type; }
+	public String getId() { return id; }
+	public Double getVal() { return val; }
+	
+//	public void setVAR(String id, Double val) {
+//		env.put(id, val);
+//	}
+//	public void setNUM(Double val) {
+//		this.val = val;
+//	}
+//	public void setNUM(Integer val) {
+//		this.val = (double)val;
+//	}
+//	
+	public boolean isDeclared(String id) {
+		return env.containsKey(id);
+	}
+	public Double getVAR(String id) {
+		return env.get(id);
+	}
+	
+}

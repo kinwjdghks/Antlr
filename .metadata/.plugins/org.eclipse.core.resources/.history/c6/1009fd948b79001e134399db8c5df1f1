@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class AstNodes {
+	//define AST nodes to print
+	//The nodes have to defined as class
+	public enum TYPE { MUL, DIV, ADD, SUB, PAR, DEC, NUM, VAR }; 
+	
+	public AstNodes.TYPE type;
+	private String id;
+	private Double val;
+	private AstNodes Left;
+	private AstNodes Right;
+	private AstNodes Inner;
+	private Double result;
+	private static Map<String,Double> env = new HashMap<String,Double>();
+	
+	
+	public AstNodes getLeft() { return Left; }
+	public AstNodes getRight() { return Right; }
+	public AstNodes getInner() { return Inner; }
+	public String getId() { return id; }
+	public Double getVal() { return val; }
+	
+	public void setVAL(String id, Double val) {
+		env.put(id, val);
+	}
+	public void setNUM(Double val) {
+		this.val = val;
+	}
+	public void setNUM(Integer val) {
+		this.val = (double)val;
+	}
+	
+	public boolean isDeclared(String id) {
+		return env.containsKey(id);
+	}
+	public Double getVAR(String id) {
+		return env.get(id);
+	}
+	
+}

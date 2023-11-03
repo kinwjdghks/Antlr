@@ -1,0 +1,28 @@
+
+public class BuildAstVisitor extends ExprBaseVisitor<AstNodes>{
+	//Build AST using ExprBaseVisitor.java
+
+	public AST visitProg(ExprParser.ProgContext ctx) {
+		AST ast = new AST();
+//		return visit(ctx.expr());
+		return ast;
+	}
+	
+	public AstNodes visitDecl(ExprParser.DeclContext ctx) {
+		
+		return visit(ctx.expr());
+	}
+	
+	public AstNodes visitInfixExpr(ExprParser.InfixExprContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+	public AstNodes visitNumberExpr(ExprParser.NumberExprContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+	public AstNodes visitParensExpr(ExprParser.ParensExprContext ctx) {
+		return visit(ctx.expr());
+	}
+	
+}

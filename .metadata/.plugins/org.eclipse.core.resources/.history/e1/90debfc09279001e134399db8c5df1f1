@@ -1,0 +1,6 @@
+
+public class AstCall {
+	public void Call(Astnodes node) {
+		
+	}
+}

@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class AST {
+
+	private ArrayList<AstNodes> roots;
+	public static Map<String,Double> env = new HashMap<String,Double>();
+	
+	public void addNode(AstNodes node) {
+		this.roots.add(node);
+	}
+	public void printAST(AST ast) {
+		for(int i=0;i<ast.roots.size();i++) {
+			Call(ast.roots.get(i));
+		}
+	}
+	
+}

@@ -1,0 +1,14 @@
+
+public class Evaluate {
+	//Define methods to calculate the expression we get as input
+	//The name of the method should be "evaluate"
+	public double evaluate(AstNodes node) {
+		if(node.type == AstNodes.TYPE.MUL) {
+			return evaluate(node.getLeft())*evaluate(node.getRight());
+		}
+		else if(node.type == AstNodes.TYPE.DIV){
+			
+		}
+		
+	}
+}
