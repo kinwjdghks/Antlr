@@ -15,7 +15,7 @@ public class AstCall {
 			Call(node.getRight(),depth--);
 			break;
 		case DIV:
-			System.out.print("MUL\n");
+			System.out.print("DIV\n");
 			Call(node.getLeft(),++depth);
 			Call(node.getRight(),depth--);
 			break;

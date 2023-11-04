@@ -28,29 +28,25 @@ public interface ExprListener extends ParseTreeListener {
 	 */
 	void exitDecl(ExprParser.DeclContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code infixExpr}
-	 * labeled alternative in {@link ExprParser#expr}.
+	 * Enter a parse tree produced by {@link ExprParser#addExpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterInfixExpr(ExprParser.InfixExprContext ctx);
+	void enterAddExpr(ExprParser.AddExprContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code infixExpr}
-	 * labeled alternative in {@link ExprParser#expr}.
+	 * Exit a parse tree produced by {@link ExprParser#addExpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitInfixExpr(ExprParser.InfixExprContext ctx);
+	void exitAddExpr(ExprParser.AddExprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code termExpr}
-	 * labeled alternative in {@link ExprParser#expr}.
+	 * Enter a parse tree produced by {@link ExprParser#multExpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterTermExpr(ExprParser.TermExprContext ctx);
+	void enterMultExpr(ExprParser.MultExprContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code termExpr}
-	 * labeled alternative in {@link ExprParser#expr}.
+	 * Exit a parse tree produced by {@link ExprParser#multExpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitTermExpr(ExprParser.TermExprContext ctx);
+	void exitMultExpr(ExprParser.MultExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code numTerm}
 	 * labeled alternative in {@link ExprParser#term}.

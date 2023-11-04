@@ -1,18 +1,22 @@
 grammar Expr;
 
 // parser rules
-prog : (decl|expr ';' NEWLINE?)*; 
+prog : (decl|addExpr ';' NEWLINE?)*; 
 
 decl : var '=' num;         
 
-expr: term
-     | expr ('*' | '/') term  //infixExpr
-     | expr ('+' | '-') term  //infixExpr
-     ;
+addExpr: multExpr				   
+     	| addExpr ('+' | '-') multExpr  
+     	;
 
-term: num 
-     | '(' expr ')' //parenTerm
-     | var 
+multExpr: term
+		| multExpr ('*' | '/') term
+		;
+
+
+term: num 			   #numTerm
+     | '(' addExpr ')' #parenTerm
+     | var 			   #varTerm
      ;
      
 num  : INT

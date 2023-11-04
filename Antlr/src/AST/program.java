@@ -1,4 +1,5 @@
 package AST;
+import java.awt.desktop.PrintFilesEvent;
 import java.io.IOException;
 import java.util.List;
 
@@ -13,18 +14,12 @@ public class program {
         // Pass tokens to parser
         ExprParser parser = new ExprParser(tokens);
         
-        //debugging codes 
-//        List<Token> tokenList = tokens.getTokens();
-//        System.out.printf("Num of Tokens: %d\n",tokenList.size());
-        //debugging codes
-        
-        
-       
         // Make AST from prog and print the tree
         
         ExprParser.ProgContext ctx = parser.prog();
         AstNodes node = (AstNodes)new BuildAstVisitor().visitProg(ctx);
-        node.getRoots().forEach(root -> AstCall.Call(root, 0));
+//        node.getRoots().forEach(root -> AstCall.Call(root, 0));
+        node.getRoots().forEach(root -> System.out.printf("%s",ctx.getChild(0).getText()));
         
         // Evaluate AST result
         node.getRoots().forEach(root -> System.out.println(Evaluate.evaluate(root)));

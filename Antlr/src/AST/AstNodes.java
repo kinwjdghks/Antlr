@@ -11,12 +11,10 @@ public class AstNodes {
 	public AstNodes(int val) { //NUM
 		this.type = TYPE.NUM;
 		this.val = (double)val;
-//		isEvaluated = true;
 	}
 	public AstNodes(double val) { //NUM
 		this.type = TYPE.NUM;
 		this.val = val;
-//		isEvaluated = false;
 	}
 	public AstNodes(String id) { //VAR
 		this.type = TYPE.VAR;
@@ -26,12 +24,10 @@ public class AstNodes {
 		this.type = type;
 		this.Left = left;
 		this.Right = right;
-//		isEvaluated = false;
 	}
 	public AstNodes(AstNodes inner) { //PAR
 		this.type = TYPE.PAR;
 		this.Inner = inner;
-//		isEvaluated = false;
 	}
 	public AstNodes() {
 		this.roots = new ArrayList<AstNodes>(); 
