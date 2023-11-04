@@ -1,0 +1,26 @@
+package AST;
+import java.io.IOException;
+import org.antlr.v4.runtime.*;
+public class program {
+
+    public static void main(String[] args) throws IOException {
+    	System.out.print("flag1");
+        // Get Lexer
+        ExprLexer lexer = new ExprLexer(CharStreams.fromStream(System.in));
+        System.out.print("flag2");
+        // Get a list of matched tokens
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        System.out.print("flag3");
+        // Pass tokens to parser
+        ExprParser parser = new ExprParser(tokens);
+        System.out.print("flag4");
+        // Make AST from prog and print the tree
+        
+        ExprParser.ProgContext ctx = parser.prog();
+        AstNodes node = (AstNodes)new BuildAstVisitor().visitProg(ctx);
+        node.getRoots().forEach(root -> AstCall.Call(root, 0));
+        
+        // Evaluate AST result
+        node.getRoots().forEach(root -> System.out.println(Evaluate.evaluate(node)));
+    }
+}
