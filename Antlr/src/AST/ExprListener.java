@@ -1,6 +1,5 @@
 // Generated from Expr.g4 by ANTLR 4.13.1
 package AST;
-
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -41,29 +40,53 @@ public interface ExprListener extends ParseTreeListener {
 	 */
 	void exitInfixExpr(ExprParser.InfixExprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code numberExpr}
+	 * Enter a parse tree produced by the {@code termExpr}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterNumberExpr(ExprParser.NumberExprContext ctx);
+	void enterTermExpr(ExprParser.TermExprContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code numberExpr}
+	 * Exit a parse tree produced by the {@code termExpr}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitNumberExpr(ExprParser.NumberExprContext ctx);
+	void exitTermExpr(ExprParser.TermExprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code parensExpr}
-	 * labeled alternative in {@link ExprParser#expr}.
+	 * Enter a parse tree produced by the {@code numTerm}
+	 * labeled alternative in {@link ExprParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void enterParensExpr(ExprParser.ParensExprContext ctx);
+	void enterNumTerm(ExprParser.NumTermContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code parensExpr}
-	 * labeled alternative in {@link ExprParser#expr}.
+	 * Exit a parse tree produced by the {@code numTerm}
+	 * labeled alternative in {@link ExprParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void exitParensExpr(ExprParser.ParensExprContext ctx);
+	void exitNumTerm(ExprParser.NumTermContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code parenTerm}
+	 * labeled alternative in {@link ExprParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterParenTerm(ExprParser.ParenTermContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code parenTerm}
+	 * labeled alternative in {@link ExprParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitParenTerm(ExprParser.ParenTermContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varTerm}
+	 * labeled alternative in {@link ExprParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarTerm(ExprParser.VarTermContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varTerm}
+	 * labeled alternative in {@link ExprParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarTerm(ExprParser.VarTermContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ExprParser#num}.
 	 * @param ctx the parse tree

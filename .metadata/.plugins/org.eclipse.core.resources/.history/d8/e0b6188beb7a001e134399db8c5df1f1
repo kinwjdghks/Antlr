@@ -1,0 +1,41 @@
+package AST;
+import java.io.Console;
+import java.io.IOException;
+import java.util.List;
+
+import org.antlr.v4.runtime.*;
+public class program {
+
+    public static void main(String[] args) throws IOException {
+        // Get Lexer
+        ExprLexer lexer = new ExprLexer(CharStreams.fromStream(System.in));
+        // Get a list of matched tokens
+        System.out.print("lexer executed\n");
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        
+        
+        //debugging codes
+        Console.WriteLine($"Parse tree: {parser.root().ToStringTree(parser)}");
+        Console.WriteLine("\nTokens:");
+
+        foreach (var token in tokenStream.GetTokens())
+        {
+          Console.WriteLine($"  {StatsQueryLexer.DefaultVocabulary.GetSymbolicName(token.Type), -15} '{token.Text}'");
+        }
+        //debugging codes
+        
+        
+        System.out.print("token generated\n");
+        // Pass tokens to parser
+        ExprParser parser = new ExprParser(tokens);
+        System.out.print("parser executed\n");
+        // Make AST from prog and print the tree
+        
+        ExprParser.ProgContext ctx = parser.prog();
+        AstNodes node = (AstNodes)new BuildAstVisitor().visitProg(ctx);
+        node.getRoots().forEach(root -> AstCall.Call(root, 0));
+        
+        // Evaluate AST result
+//        node.getRoots().forEach(root -> System.out.println(Evaluate.evaluate(node)));
+    }
+}

@@ -4,7 +4,7 @@ public class AstCall {
 	
 	public static void Call(AstNodes node, int depth) {
 		
-		for(int i=0;i<depth;i++) {System.out.print("\t\t");}
+		for(int i=0;i<depth;i++) {System.out.print("\t");}
 		
 		AstNodes.TYPE type = node.getType();
 		switch(type) {
@@ -38,7 +38,7 @@ public class AstCall {
 			Call(node.getRight(),depth--);
 			break;
 		case NUM:
-			System.out.printf("%.1f\n",node.getVal());
+			System.out.printf("%.1f\n",Evaluate.evaluate(node));
 			break;
 		case VAR:
 			System.out.printf("%s\n",node.getId());

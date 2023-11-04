@@ -18,17 +18,9 @@ public class AstNodes {
 		this.val = val;
 //		isEvaluated = false;
 	}
-	public AstNodes(String id, int val) { //VAR
+	public AstNodes(String id) { //VAR
 		this.type = TYPE.VAR;
 		this.id = id;
-		this.val = (double)val;
-//		isEvaluated = false;
-	}
-	public AstNodes(String id, double val) { //VAR
-		this.type = TYPE.VAR;
-		this.id = id;
-		this.val = val;
-//		isEvaluated = false;
 	}
 	public AstNodes(AstNodes.TYPE type, AstNodes left, AstNodes right) { //INFIX, DEC
 		this.type = type;

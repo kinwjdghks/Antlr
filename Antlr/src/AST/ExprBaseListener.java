@@ -53,25 +53,49 @@ public class ExprBaseListener implements ExprListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumberExpr(ExprParser.NumberExprContext ctx) { }
+	@Override public void enterTermExpr(ExprParser.TermExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumberExpr(ExprParser.NumberExprContext ctx) { }
+	@Override public void exitTermExpr(ExprParser.TermExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParensExpr(ExprParser.ParensExprContext ctx) { }
+	@Override public void enterNumTerm(ExprParser.NumTermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParensExpr(ExprParser.ParensExprContext ctx) { }
+	@Override public void exitNumTerm(ExprParser.NumTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParenTerm(ExprParser.ParenTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParenTerm(ExprParser.ParenTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarTerm(ExprParser.VarTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarTerm(ExprParser.VarTermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

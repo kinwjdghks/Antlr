@@ -1,5 +1,7 @@
 package AST;
 
+import AST.ExprParser.NumContext;
+
 public class BuildAstVisitor extends ExprBaseVisitor<AstNodes>{
 	//Build AST using ExprBaseVisitor.java
 
@@ -9,7 +11,6 @@ public class BuildAstVisitor extends ExprBaseVisitor<AstNodes>{
 		for(int i=0;i<ctx.getChildCount()-1;i++) {
 			nodes.addRoot(visit(ctx.getChild(i)));
 		}
-		
 		return nodes;
 		
 	}
@@ -41,14 +42,30 @@ public class BuildAstVisitor extends ExprBaseVisitor<AstNodes>{
 				
 	}
 	
-	public AstNodes visitNumberExpr(ExprParser.NumberExprContext ctx) {
-		
+	public AstNodes visitTermExpr(ExprParser.TermExprContext ctx) {
+		return visit(ctx.getChild(0));
+	}
+	
+	public AstNodes visitNumTerm(ExprParser.NumTermContext ctx) {
 		return new AstNodes(Double.parseDouble(ctx.getChild(0).getText()));
 	}
 	
-	public AstNodes visitParensExpr(ExprParser.ParensExprContext ctx) {
-
+	
+	public AstNodes visitParenTerm(ExprParser.ParenTermContext ctx) {
 		return visit(ctx.getChild(1));
+	}
+	
+	public AstNodes visitVarTerm(ExprParser.VarTermContext ctx) {
+		return visit(ctx.getChild(0));
+	}
+	
+	public AstNodes visitNum(ExprParser.NumContext ctx) {
+		return new AstNodes(Double.parseDouble(ctx.getChild(0).getText()));
+	}
+	
+	public AstNodes visitVar(ExprParser.VarContext ctx) {
+		String id = ctx.getChild(0).getText();
+		return new AstNodes(id);
 	}
 	
 }

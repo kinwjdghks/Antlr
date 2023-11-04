@@ -35,7 +35,7 @@ public class Evaluate {
 			}
 			else {
 				System.out.print("Variable not declared!");
-				return 0.0;
+				return -1.0;
 			}
 		}
 		return 0.0;

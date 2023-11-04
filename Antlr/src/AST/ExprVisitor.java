@@ -1,6 +1,5 @@
 // Generated from Expr.g4 by ANTLR 4.13.1
 package AST;
-
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -31,19 +30,33 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitInfixExpr(ExprParser.InfixExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code numberExpr}
+	 * Visit a parse tree produced by the {@code termExpr}
 	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNumberExpr(ExprParser.NumberExprContext ctx);
+	T visitTermExpr(ExprParser.TermExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code parensExpr}
-	 * labeled alternative in {@link ExprParser#expr}.
+	 * Visit a parse tree produced by the {@code numTerm}
+	 * labeled alternative in {@link ExprParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParensExpr(ExprParser.ParensExprContext ctx);
+	T visitNumTerm(ExprParser.NumTermContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code parenTerm}
+	 * labeled alternative in {@link ExprParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParenTerm(ExprParser.ParenTermContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varTerm}
+	 * labeled alternative in {@link ExprParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarTerm(ExprParser.VarTermContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ExprParser#num}.
 	 * @param ctx the parse tree
