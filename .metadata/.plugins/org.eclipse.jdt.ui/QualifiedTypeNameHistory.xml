@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="AstNodes.Multiplication"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.antlr.v4.codegen.model.VisitorDispatchMethod"/>
+    <fullyQualifiedTypeName name="javax.script.AbstractScriptEngine"/>
+    <fullyQualifiedTypeName name="AstNodes.TYPE"/>
+    <fullyQualifiedTypeName name="AstNodes"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.nio.file.Path"/>
+    <fullyQualifiedTypeName name="org.antlr.v4.gui.SystemFontMetrics"/>
+    <fullyQualifiedTypeName name="org.antlr.v4.runtime.ListTokenSource"/>
+    <fullyQualifiedTypeName name="java.io.Console"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.antlr.v4.runtime.Token"/>
+    <fullyQualifiedTypeName name="java.awt.desktop.PrintFilesEvent"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="AST.AstNodes.TYPE"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="AST.AstNodes"/>
+    <fullyQualifiedTypeName name="AST.Evaluate"/>
+</qualifiedTypeNameHistroy>

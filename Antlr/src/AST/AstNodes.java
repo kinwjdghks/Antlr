@@ -45,6 +45,9 @@ public class AstNodes {
 	public static double getVARval(String id) {
 		return env.get(id);
 	}
+	public static void declare(String id, Double val) {
+		env.put(id, val);
+	}
 	
 	public void addNode(AstNodes node) {
 		if(node != null) {

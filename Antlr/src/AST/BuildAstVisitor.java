@@ -6,19 +6,13 @@ public class BuildAstVisitor extends ExprBaseVisitor<AstNodes>{
 	public AstNodes visitProg(ExprParser.ProgContext ctx) {
 		//visit all the nodes in the prog ctx and add AST nodes
 		AstNodes nodes = new AstNodes();
-		System.out.printf("getChildCount: %d\n",ctx.getChildCount());
 		for(int i=0;i<ctx.getChildCount()-1;i++) {
 			nodes.addRoot(visit(ctx.getChild(i)));
 		}
 		return nodes;
 		
 	}
-	
-	public AstNodes visitDecl(ExprParser.DeclContext ctx) {
-//		String varName = ctx.getChild(0).getText();
-//		Double varVal = Double.parseDouble(ctx.getChild(2).getText());
-		return new AstNodes(AstNodes.TYPE.DEC,visit(ctx.getChild(0)),visit(ctx.getChild(2))); 
-	}
+
 	
 	public AstNodes visitAddExpr(ExprParser.AddExprContext ctx) {
 		if (ctx.getChildCount() >= 3 && ctx.getChild(0) != null && ctx.getChild(2) != null) {
@@ -30,6 +24,9 @@ public class BuildAstVisitor extends ExprBaseVisitor<AstNodes>{
 				break;
 			case "-": 
 				type = AstNodes.TYPE.SUB;
+				break;
+			case "=":
+				type = AstNodes.TYPE.DEC;
 				break;
 			}
 			return new AstNodes(type, visit(ctx.getChild(0)), visit(ctx.getChild(2)));

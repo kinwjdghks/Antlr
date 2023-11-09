@@ -1,7 +1,5 @@
 package AST;
-import java.awt.desktop.PrintFilesEvent;
 import java.io.IOException;
-import java.util.List;
 
 import org.antlr.v4.runtime.*;
 public class program {
@@ -18,8 +16,8 @@ public class program {
         
         ExprParser.ProgContext ctx = parser.prog();
         AstNodes node = (AstNodes)new BuildAstVisitor().visitProg(ctx);
-//        node.getRoots().forEach(root -> AstCall.Call(root, 0));
-        node.getRoots().forEach(root -> System.out.printf("%s",ctx.getChild(0).getText()));
+        node.getRoots().forEach(root -> AstCall.Call(root, 0));
+        
         
         // Evaluate AST result
         node.getRoots().forEach(root -> System.out.println(Evaluate.evaluate(root)));

@@ -1,12 +1,11 @@
 grammar Expr;
 
 // parser rules
-prog : (decl|addExpr ';' NEWLINE?)*; 
-
-decl : var '=' num;         
+prog : (addExpr ';' NEWLINE?)*;   
 
 addExpr: multExpr				   
-     	| addExpr ('+' | '-') multExpr  
+     	| addExpr ('+' | '-') multExpr
+     	| var '=' num  
      	;
 
 multExpr: term

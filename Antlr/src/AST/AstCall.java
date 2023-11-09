@@ -34,6 +34,7 @@ public class AstCall {
 			break;
 		case DEC:
 			System.out.print("ASSIGN\n");
+			AstNodes.declare(node.getLeft().getId(), Evaluate.evaluate(node.getRight()));
 			Call(node.getLeft(),++depth);
 			Call(node.getRight(),depth--);
 			break;
